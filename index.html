@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.1/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <main>
+      <div id="samplePig" style="display:none;">
+        <div class="pig">
+          <img class="pigimage" src="https://cdn-icons-png.flaticon.com/512/459/459702.png" width="100%">
+        </div>
+        <div class="pigLabel"></div>
+      </div>
+      <div id="title-screen">
+        <div class="button-group">
+          <button onclick="app.start_round(players=3)">3 player</button>
+          <button onclick="app.start_round(players=2)">2 player</button>
+          <button onclick="app.start_round(players=1)">1 player</button>
+        </div>
+      </div>
+      <div id="main-screen">
+        <div class="button-group">
+          <div id="top-bar">
+            <button id="back-button" onclick="launch()">back</button>
+            <div id="player-label"></div>
+          </div>
+          <hr>
+          <button onclick="app.roll()">roll</button>
+          <button onclick="app.pass()">pass</button>
+          <div id="pigpen"></div>
+          <div id="scoreboard"></div>
+        </div>
+      </div>
+      <div id="gameover-screen">
+        <div class="button-group">
+          <div id="win-lose-title">
+            <img src="https://media4.giphy.com/media/GDp7LycxkT3LG/200w.gif?cid=6c09b952ex5ygw0irc5nbgmzcv5i9q7e9xliiq7g3kljaxoa&ep=v1_gifs_search&rid=200w.gif&ct=g" id="ok-boomer">
+            <div id="win-lose-label">
+            </div>
+          </div>
+          <hr>
+          <q id="quote">There is no instance of a nation benefitting from prolonged warfare.</q> - Sun Tzu
+          <hr>
+          <div id="scorecard"></div>
+          <button onclick="launch()">replay</button>
+        </div>
+      </div>
+    </main>
+    <script src="sketch.js"></script>
+  </body>
+</html>
