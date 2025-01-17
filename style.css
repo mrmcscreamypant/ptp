@@ -1,0 +1,100 @@
+html, body {
+  display: block;
+  margin: auto;
+  height: 100%;
+  padding: 0;
+  background-color: white;
+}
+
+.button-group {
+  display: block;
+  width: 50%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+#player-label {
+  flex: 1;
+  margin: auto;
+  display: block;
+  color: grey;
+  font-size: 25px;
+  font-family: monospace;
+}
+
+#win-lose-title {
+  display: block;
+  font-size: 40px;
+  font-family: sans-serif;
+  text-align: center;
+  margin: auto;
+}
+
+.scoreboard-entry {
+  display: flex;
+  margin: auto;
+  padding: auto;
+  text-align: center;
+  border-bottom: 1px solid grey;
+}
+
+.player-name {
+  margin: auto;
+  flex: 2;
+}
+
+.player-score {
+  margin: auto;
+  flex: 1;
+}
+
+#scoreboard {
+  margin: 10px;
+  border: 2px solid black;
+  text-align: center;
+  
+}
+
+#top-bar {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+#back-button {
+  flex: 1;
+  margin-right: 50px;
+}
+
+.pigLabel {
+  margin: auto;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+#pigpen {
+  text-align: center;
+  text-wrap: wrap;
+  overflow: hide;
+  margin: 10px;
+  border: black solid 2px;
+}
+
+.pig {
+  display: block;
+  margin: auto;
+  scale: 0.4;
+  margin-bottom: 5px;
+  width: 50%;
+}
+
+button {
+  display: block;
+  border: 3px solid black;
+  margin: auto;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  width: 50%;
+  background-color: white;
+  font-size: 20px;
+}
