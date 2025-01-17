@@ -6,6 +6,7 @@ class App {
   constructor() {
     this.NUMPIGS = 2;
     this.WINNING_SCORE = 100;
+    this.stale = false;
 
     document.getElementById("ok-boomer").style.display = "inline";
     document.getElementById("main-screen").style.display = "none";
@@ -101,6 +102,9 @@ class App {
   }
 
   pass(ai = false) {
+    if (this.stale) {
+      return;
+    }
     if (this.rolling) {
       return;
     }
@@ -147,6 +151,9 @@ class App {
   }
 
   check_done_rolling() {
+    if (this.stale) {
+      return;
+    }
     for (let i in this.pigs) {
       if (this.pigs[i].rolling) {
         return;
@@ -167,6 +174,9 @@ class App {
   }
 
   roll(ai = false) {
+    if (this.stale) {
+      return;
+    }
     if (this.rolling) {
       return;
     }
@@ -798,6 +808,9 @@ class God extends Ai {
 let app;
 
 function launch() {
+  if (app) {
+    app.stale = true;
+  }
   app = new App();
 }
 
