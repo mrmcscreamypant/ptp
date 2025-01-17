@@ -34,7 +34,9 @@ class App {
   }
 
   game_over() {
-    if (this.stale) {return;}
+    if (this.stale) {
+      return;
+    }
     if (this.active_player.constructor != God) {
       document.getElementById("ok-boomer").style.display = "none";
       if (
@@ -48,9 +50,9 @@ class App {
           "win-lose-label"
         ).innerHTML = `${this.active_player.name} wins!`;
       } else {
-        document.getElementById(
-          "win-lose-label"
-        ).innerHTML = `How on earth did you just do that? (that was supposed to be impossible)`;
+        document.getElementById("win-lose-label").innerHTML = `Wait, what?`;
+        document.getElementById("quote").innerHTML =
+          "<q>Impressive, most impressive</q>";
       }
     }
 
