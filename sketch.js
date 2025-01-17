@@ -743,7 +743,7 @@ class DivinePig extends Pig {
   compute_roll() {
     const winning_numbers = [0, 3, 5];
 
-    const losing_numbers = [0, 1, 2, 3, 4];
+    const losing_numbers = [0, 1, 3, 4];
 
     if (this.app.playerID == this.winner) {
       return this.states[random_choice(winning_numbers)];
