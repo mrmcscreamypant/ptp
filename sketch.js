@@ -35,9 +35,21 @@ class App {
   game_over() {
     if (this.active_player.constructor != God) {
       document.getElementById("ok-boomer").style.display = "none";
-      document.getElementById(
-        "win-lose-label"
-      ).innerHTML = `${this.active_player.name} wins!`;
+      if (
+        !this.players
+          .map((player) => {
+            return player.constructor;
+          })
+          .includes(God)
+      ) {
+        document.getElementById(
+          "win-lose-label"
+        ).innerHTML = `${this.active_player.name} wins!`;
+      } else {
+        document.getElementById(
+          "win-lose-label"
+        ).innerHTML = `How on earth did you just do that? (that was supposed to be impossible)`;
+      }
     }
 
     document.getElementById("main-screen").style.display = "none";
@@ -88,7 +100,7 @@ class App {
     }
   }
 
-  pass(ai=false) {
+  pass(ai = false) {
     if (this.rolling) {
       return;
     }
@@ -96,7 +108,7 @@ class App {
       return;
     }
     if (this.ai_rolling && !ai) {
-      return
+      return;
     }
 
     this.active_player.on_pass();
@@ -154,7 +166,7 @@ class App {
     this.active_player.on_turn();
   }
 
-  roll(ai=false) {
+  roll(ai = false) {
     if (this.rolling) {
       return;
     }
@@ -406,7 +418,7 @@ class PigOnNose extends PigState {
     this.END_DEG = 0;
     this.CHANCE = 3;
   }
-  
+
   _comple_anim() {
     return [
       { transform: `rotate(0deg) scale(1)` },
