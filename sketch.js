@@ -34,7 +34,7 @@ class App {
   }
 
   game_over() {
-    if (this.stale) {return;};
+    if (this.stale) {return;}
     if (this.active_player.constructor != God) {
       document.getElementById("ok-boomer").style.display = "none";
       if (
